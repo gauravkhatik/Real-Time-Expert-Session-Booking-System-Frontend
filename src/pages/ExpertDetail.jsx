@@ -17,7 +17,7 @@ export default function ExpertDetail(){
     fetchExpert()
     fetchSlots()
     
-    const ioUrl = import.meta.env.VITE_IO_URL || 'https://real-time-expert-session-booking-sy.vercel.app'
+    const ioUrl = import.meta.env.VITE_IO_URL
     if (ioUrl && typeof ioUrl === 'string') {
       socket = io(ioUrl, { reconnection: true })
       socket.on('connect', ()=>{ socket.emit('joinExpert', id) })
